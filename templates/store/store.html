@@ -1,0 +1,35 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+	<div class="row">
+		{% for product in products %}
+		<div class="col-lg-4">
+        <div class="card" style="width: 18rem;">
+			<img class="image" src="{{product.imageURL}}">
+			<div class="card-body">
+				<button data-product="{{product.id}}" data-action="add" style="font-size: 18px; margin-right: 5%; color: black;"  class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+                <a class="link" href="#">View</a>
+				<hr>
+                <center>
+                <h5 class="card-title">{{product.name}}</h5>
+                </center>
+				<h5 class="card-title">${{product.price}}</h5>
+                 </div>
+			</div>
+		</div>
+{#            <div class="col-lg-4">#}
+{#            <div class="card" style="width: 18rem;">#}
+{#                <img src="{{ category.image.url }}" class="image">#}
+{#                <div class="card-body">#}
+{#                    <a href="{% url 'shopping' pk=category.pk %}" class="link"><center>Shop now</center></a>#}
+{#                    <hr>#}
+{#                    <center>#}
+{#                    <h5 class="card-title">{{ category.sport_name }}</h5>#}
+{#                    </center>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+		{% endfor %}
+	</div>
+
+{% endblock content %}
